@@ -1,0 +1,3 @@
+Config.default.xlsxを、
+Config.xlsxへ変換し、
+FFRK用にカスタマイズした箇所の値を変更して使用してください.

@@ -26,7 +26,6 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="メール送信" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Util\SendMail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="mail_to" />
         <InArgument x:TypeArguments="x:String" x:Key="body">
           <Literal x:TypeArguments="x:String">FFRKが止まってしまったお(´・ω・｀)</Literal>
         </InArgument>
