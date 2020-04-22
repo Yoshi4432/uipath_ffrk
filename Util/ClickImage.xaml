@@ -5,10 +5,10 @@
     <x:Property Name="ready_before" Type="InArgument(x:Int32)" />
     <x:Property Name="ready_after" Type="InArgument(x:Int32)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>390,651</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>581,722</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="32">
+    <scg:List x:TypeArguments="x:String" Capacity="17">
       <x:String>System.Activities</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>System</x:String>
@@ -29,7 +29,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -46,15 +46,48 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="画像クリック" sap:VirtualizedContainerService.HintSize="376,160" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="セレクタの使用&#xD;&#xA;　⇒高速になる&#xD;&#xA;　　アクティブ化する" DisplayName="画像クリック" sap:VirtualizedContainerService.HintSize="591,557" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="selector" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ClickImage ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="[ready_before]" DelayMS="[ready_after]" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+    <If Condition="True" DisplayName="セレクタを使用する？" sap:VirtualizedContainerService.HintSize="549,300" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="セレクタを代入" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[selector]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["&lt;wnd app='ffrk.exe' cls='KickmotorMain' title='FINAL FANTASY Record Keeper' /&gt;"]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Nothing to Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:ClickImage ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="[ready_before]" DelayMS="[ready_after]" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="549,68" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
       <ui:ClickImage.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -69,7 +102,7 @@
         <ui:ImageTarget TargetImageBase64="{x:Null}" Accuracy="0.8" Image="[image]" />
       </ui:ClickImage.Image>
       <ui:ClickImage.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='ffrk.exe' cls='KickmotorMain' title='FINAL FANTASY Record Keeper' /&gt;" TimeoutMS="[timeout]" WaitForReady="NONE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[selector]" TimeoutMS="[timeout]" WaitForReady="NONE" />
       </ui:ClickImage.Target>
     </ui:ClickImage>
   </Sequence>
