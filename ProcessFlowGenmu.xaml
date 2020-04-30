@@ -66,7 +66,7 @@
           <av:PointCollection x:Key="ConnectorLocation">200,222 200,252 201,252 201,272</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="" DisplayName="ネットワークエラー監視" sap:VirtualizedContainerService.HintSize="571,1068" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence sap2010:Annotation.AnnotationText="" DisplayName="ネットワークエラー監視" sap:VirtualizedContainerService.HintSize="568,1020" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="ui:Image" Name="image" />
         </Sequence.Variables>
@@ -76,7 +76,7 @@
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="FFRKネットワークエラー実行" sap:VirtualizedContainerService.HintSize="529,179" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="FFRKネットワークエラー実行" sap:VirtualizedContainerService.HintSize="526,179" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -92,7 +92,7 @@
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
-        <Sequence DisplayName="システムエラー対応" sap:VirtualizedContainerService.HintSize="529,603" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="システムエラー対応" sap:VirtualizedContainerService.HintSize="526,555" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="resultFind" />
           </Sequence.Variables>
@@ -101,8 +101,8 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\901_Condition_システムエラー.png" sap:VirtualizedContainerService.HintSize="487,59" sap2010:WorkflowViewState.IdRef="LoadImage_2" Image="[image]" />
-          <ui:ImageFound DisplayName="画像の有無を確認" Found="[resultFind]" sap:VirtualizedContainerService.HintSize="487,68" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\901_Condition_システムエラー.png" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="LoadImage_2" Image="[image]" />
+          <ui:ImageFound DisplayName="画像の有無を確認" Found="[resultFind]" sap:VirtualizedContainerService.HintSize="484,68" sap2010:WorkflowViewState.IdRef="ImageFound_1">
             <ui:ImageFound.Image>
               <ui:ImageTarget TargetImageBase64="{x:Null}" Accuracy="0.8" Image="[image]" />
             </ui:ImageFound.Image>
@@ -110,13 +110,14 @@
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
             </ui:ImageFound.Target>
           </ui:ImageFound>
-          <If Condition="[resultFind]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="487,304" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[resultFind]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,256" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence sap2010:Annotation.AnnotationText="対応めんどくさすぎるから後続処理やめるわ・・(´・ω・｀)" DisplayName="システムエラー対応" sap:VirtualizedContainerService.HintSize="242,156" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence sap2010:Annotation.AnnotationText="対応めんどくさすぎる・・&#xD;&#xA;後続処理やめるわ・・(´・ω・｀)" DisplayName="システムエラー対応" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <TerminateWorkflow DisplayName="ワークフローを終了" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="FFRKシステムエラー発生（幻夢）" />
@@ -133,7 +134,7 @@
             </If.Else>
           </If>
         </Sequence>
-        <Sequence DisplayName="ネットワークエラー101対応" sap:VirtualizedContainerService.HintSize="529,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="ネットワークエラー101対応" sap:VirtualizedContainerService.HintSize="526,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
