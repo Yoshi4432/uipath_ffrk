@@ -66,7 +66,7 @@
           <av:PointCollection x:Key="ConnectorLocation">200,222 200,252 201,252 201,272</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="" DisplayName="ネットワークエラー監視" sap:VirtualizedContainerService.HintSize="568,1020" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence sap2010:Annotation.AnnotationText="" DisplayName="ネットワークエラー監視" sap:VirtualizedContainerService.HintSize="705,1091" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="ui:Image" Name="image" />
         </Sequence.Variables>
@@ -76,10 +76,10 @@
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="FFRKネットワークエラー実行" sap:VirtualizedContainerService.HintSize="526,179" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="FFRKネットワークエラー実行" sap:VirtualizedContainerService.HintSize="663,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -92,13 +92,14 @@
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
-        <Sequence DisplayName="システムエラー対応" sap:VirtualizedContainerService.HintSize="526,555" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="システムエラー対応" sap:VirtualizedContainerService.HintSize="663,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="resultFind" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\901_Condition_システムエラー.png" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="LoadImage_2" Image="[image]" />
@@ -134,12 +135,67 @@
             </If.Else>
           </If>
         </Sequence>
-        <Sequence DisplayName="ネットワークエラー101対応" sap:VirtualizedContainerService.HintSize="526,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="101：ネットワークエラー対応" sap:VirtualizedContainerService.HintSize="663,756" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="resultFind" />
+          </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
+          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\902_Condition_ネットワークエラー.png" sap:VirtualizedContainerService.HintSize="621,59" sap2010:WorkflowViewState.IdRef="LoadImage_4" Image="[image]" />
+          <ui:ImageFound DisplayName="画像の有無を確認" Found="[resultFind]" sap:VirtualizedContainerService.HintSize="621,68" sap2010:WorkflowViewState.IdRef="ImageFound_2">
+            <ui:ImageFound.Image>
+              <ui:ImageTarget Accuracy="0.8" Image="[image]" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAfCAYAAACCj930AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAABVBJREFUeF7tWguSrCAMnGt5Ia/jbbyMh/Gl+UgCAcM4zrpv6SpqdxCTkDQhqK99YOChGOQceCwGOQcei0HOG7Cty76s4cevwLYv87Kvy7zfYrbzxxZ+2GEkJxk/vWP4us/TQnffhG3Zpzvlv4N13udfQUwZm42IuRCJ5jdIZMIbfvlBctK112t/Kc06iW2ZKvfWZE/7EoxZ5/L6dVKRXspAab532qHLnqLgU9D9xoWNnUDOC30zJYbJtTnTqY0H1rmPQw1ygpDl5F2L3kPmgmH0d2Z9ydiWA/Rr65wC10a5YNR74USbwOtoZYdv2NGlw0JO+JjIB7LxsWLH8mO82sr4iJZ/FHTWnJgQJ0AkCCOKcBCNpyyBraIwtOIcKzmRNWUgmA0cWsCoT110p8Fqw22NNQHfsEPTUYWPzYRaM78FcgSLslhlehALSTo9to7UHezsICcUlsSJAUExjb/SUNxDhHEribYc4QhtAolg2paN5pwiVm5AbeLmgCV7mrobaG5b37CD6Ti/N+jZVjoM0Vj4/bjUJqeMsf8tbdJiC1D/x8mJwLs6CUobASDIAGWTqtQiCbVJnSN32AErKTBHy7gGujOnhit2mBcAkPma9NZjk8XxXXLWEkgFbXJuG83Xp/6DlFDAVxlHobyTbJ3GJzT0GANWJXcPSFdVxjfsuELOJkpycj2lzRXZLf8oqJMTEz1ImNVzWGWKE0Bkk5EqoMNWb0qc3GcJmFtwVjtboPnWvP8NOz5FTsgR88jGCju1Wl+X/cHTOodmAEfIsIVjrOT0BOtZVQ6uzFCISc7V6i3XMiUbAtGcWydI3qHiVjto7orcr5CTgBLmeJRUGK3I5n4x4gPkjMTSptlwQEQIitmnAS6Y2knTCrf64TDtScI1oLY2vyG60Y42DLH5FJw/+jUZyTkw8H0Mcg48FoOcA49FnZyohZSCO2++yKX6JfbxOoZkaKd6G6iWZae79A76nRN9QvNZpIChJoOPqlX+2SEyALXz4bv+2vt/RkfmJGebqnwEJRJJthjHdNKT/SWIIHSRx6v2etMqs/16lC0y0bQTKaFJTm97BJ4FlnqxAIjAoR+HvKuvUP8nnJCzFiy0lBXgeK0fwdP5TCfTEAE8+7JnC098nQ82mW1ycoA4GVFAHuED2Q674ivBeA0XmkSOUHT+YZyTM3lcZM6z98g8aEeACshgnBMH9hDhmxm8LfMSOQtw/wRgm8b2THr8pbi9x78N4N5TAv8dfCRz+gD4ftNDYGQW2oKTLNqO+StS4CB46sPWjdipmdEik9AmZ5pH3jhnXAmBfuirkInriQu5+WoSmXVkTYFbMqf2AW06yIAA9D8VWjyAG4KD2o508AAlPdyWPKvZZV7PnOgPNlUzHezh2TuOrx0QMb7uz7+KOjm1rVlpPjYUsNiHbZdaHoLjlIyA+n9k8EEkIlGeFV1gta+hHDHC/R0yE9kT4ud+EkQYZR5eRyQbMqhCKujli/qUeCRTJfnfRkfmlJBBjuMoEDG7UoCQJQ5S0mnFBZoCiqH5ly21jObJWXm1R6R1J90OmSU5Gdnwi+5Jiw+lgczkQNrWSa+6EPn2XSO5RDzMDSR8jpxH5gy9RBjwNJEzntzDWJbhNmQgRQ/68WEHsp8au4O0dpkgX/oOIPtgRWQ8T9rZkZWTLcLfq/WLTAmZPJtrIFtlDT8AvEHOkghinHuMAmL6q8djptrWFghRBC9kXmBFRoSMohE58tQI1GQCkHscesr7eebkpE3jQD6yB/PR0h10u7EY5+WUBB6w4IScAwM/h0HOgcdikHPgsRjkHHgo9v0f5XL+stWNwLkAAAAASUVORK5CYII=" />
+            </ui:ImageFound.Image>
+            <ui:ImageFound.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+            </ui:ImageFound.Target>
+          </ui:ImageFound>
+          <If Condition="[resultFind]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="621,457" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <Sequence sap2010:Annotation.AnnotationText="" DisplayName="対応" sap:VirtualizedContainerService.HintSize="376,309" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\902_2_Button_ネットワークエラー.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_5" Image="[image]" />
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="ui:Image" x:Key="image">
+                      <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="timeout">
+                      <Literal x:TypeArguments="x:Int32" Value="10" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
+                    <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Nothing to Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
         </Sequence>
       </Sequence>
       <FlowStep.Next>
