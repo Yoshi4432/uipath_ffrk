@@ -1109,7 +1109,7 @@
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <av:Point x:Key="ShapeLocation">101,2065</av:Point>
                                                                         <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                                        <av:PointCollection x:Key="ConnectorLocation">101,2098 71,2098 71,1476 402,1476</av:PointCollection>
+                                                                        <av:PointCollection x:Key="ConnectorLocation">201,2131 201,2181</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                     <Sequence DisplayName="スタミナを回復しました！" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_59">
@@ -1130,7 +1130,41 @@
                                                                       </ui:InvokeWorkflowFile>
                                                                     </Sequence>
                                                                     <FlowStep.Next>
-                                                                      <x:Reference>__ReferenceID1</x:Reference>
+                                                                      <FlowStep x:Name="__ReferenceID28">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <av:Point x:Key="ShapeLocation">101,2181</av:Point>
+                                                                            <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                                                            <av:PointCollection x:Key="ConnectorLocation">101,2214 71,2214 71,1476 402,1476</av:PointCollection>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <Sequence DisplayName="戻る（念のため）" sap:VirtualizedContainerService.HintSize="376,242" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                                                                          <Sequence.Variables>
+                                                                            <Variable x:TypeArguments="ui:Image" Name="image" />
+                                                                          </Sequence.Variables>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\006_戻る_青.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_42" Image="[image]">
+                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                                              </scg:Dictionary>
+                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                          </ui:LoadImage>
+                                                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_59" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                                                            <ui:InvokeWorkflowFile.Arguments>
+                                                                              <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
+                                                                            </ui:InvokeWorkflowFile.Arguments>
+                                                                          </ui:InvokeWorkflowFile>
+                                                                        </Sequence>
+                                                                        <FlowStep.Next>
+                                                                          <x:Reference>__ReferenceID1</x:Reference>
+                                                                        </FlowStep.Next>
+                                                                      </FlowStep>
                                                                     </FlowStep.Next>
                                                                   </FlowStep>
                                                                 </FlowStep.Next>
@@ -1307,10 +1341,10 @@
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                 <av:Point x:Key="ShapeLocation">703,2297</av:Point>
                                                                                 <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                                                <av:PointCollection x:Key="ConnectorLocation">803,2363 803,2413</av:PointCollection>
+                                                                                <av:PointCollection x:Key="ConnectorLocation">803,2363 803,2393 738,2393 738,2413</av:PointCollection>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                            <Sequence DisplayName="戦闘リザルト_次へ" sap:VirtualizedContainerService.HintSize="526,616" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                                            <Sequence DisplayName="戦闘リザルト_次へ" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                                                               <Sequence.Variables>
                                                                                 <Variable x:TypeArguments="ui:Image" Name="image" />
                                                                                 <Variable x:TypeArguments="x:Boolean" Name="resultClick" />
@@ -1384,17 +1418,17 @@
                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                    <av:Point x:Key="ShapeLocation">768,2413</av:Point>
+                                                                                    <av:Point x:Key="ShapeLocation">703,2413</av:Point>
                                                                                     <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                                                    <av:PointCollection x:Key="FalseConnector">838,2456.5 863,2456.5 863,2520 803,2520 803,2550</av:PointCollection>
-                                                                                    <av:PointCollection x:Key="TrueConnector">768,2456.5 632,2456.5 632,2561 602,2561</av:PointCollection>
+                                                                                    <av:PointCollection x:Key="FalseConnector">773,2456.5 803,2456.5 803,2513</av:PointCollection>
+                                                                                    <av:PointCollection x:Key="TrueConnector">703,2456.5 673,2456.5 673,2524 602,2524</av:PointCollection>
                                                                                   </scg:Dictionary>
                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                 <FlowDecision.True>
                                                                                   <FlowStep x:Name="__ReferenceID23">
                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                        <av:Point x:Key="ShapeLocation">402,2550</av:Point>
+                                                                                        <av:Point x:Key="ShapeLocation">402,2513</av:Point>
                                                                                         <av:Size x:Key="ShapeSize">200,22</av:Size>
                                                                                       </scg:Dictionary>
                                                                                     </sap:WorkflowViewStateService.ViewState>
@@ -1411,9 +1445,9 @@
                                                                                   <FlowStep x:Name="__ReferenceID14">
                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                        <av:Point x:Key="ShapeLocation">703,2550</av:Point>
+                                                                                        <av:Point x:Key="ShapeLocation">703,2513</av:Point>
                                                                                         <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                                                        <av:PointCollection x:Key="ConnectorLocation">903,2583 933,2583 933,158 601,158</av:PointCollection>
+                                                                                        <av:PointCollection x:Key="ConnectorLocation">903,2546 933,2546 933,158 601,158</av:PointCollection>
                                                                                       </scg:Dictionary>
                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                     <Sequence DisplayName="後処理" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_50">
@@ -1553,6 +1587,7 @@
           <x:Reference>__ReferenceID25</x:Reference>
           <x:Reference>__ReferenceID26</x:Reference>
           <x:Reference>__ReferenceID27</x:Reference>
+          <x:Reference>__ReferenceID28</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
