@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1314,3340</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1041,3340</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -107,7 +107,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">501,423 501,473</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="難易度選択" sap:VirtualizedContainerService.HintSize="376,361" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <Sequence DisplayName="難易度選択" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:Image" Name="image" />
               </Sequence.Variables>
@@ -171,12 +171,8 @@
               </If>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                    <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="timeout">
-                    <Literal x:TypeArguments="x:Int32" Value="60000" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="timeout">60000</InArgument>
                   <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
                   <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
                   <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click" />
@@ -691,7 +687,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">502,1277 502,1327</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="フレンド解除" sap:VirtualizedContainerService.HintSize="284,326" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                        <Sequence DisplayName="フレンド解除" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="ui:Image" Name="image" />
                                           </Sequence.Variables>
