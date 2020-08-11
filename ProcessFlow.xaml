@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1041,3340</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1314,3340</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -70,6 +70,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="isLackStamina" />
       <Variable x:TypeArguments="x:Boolean" Name="isDailyEvent" />
       <Variable x:TypeArguments="x:Boolean" Name="isError" />
+      <Variable x:TypeArguments="x:Boolean" Name="isFirst" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -205,14 +206,44 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\002_挑戦する.png" sap:VirtualizedContainerService.HintSize="487,59" sap2010:WorkflowViewState.IdRef="LoadImage_15" Image="[image]">
+                  <If Condition="[isFirst]" DisplayName="初回のみ待機（Now Loadingが走るため）" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_20">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_108">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Delay DisplayName="待機" Duration="00:00:20" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Nothing to Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\002_挑戦する.png" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LoadImage_15" Image="[image]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LoadImage>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="挑戦する" sap:VirtualizedContainerService.HintSize="487,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_54" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="挑戦する" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_54" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                       <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
@@ -222,16 +253,16 @@
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <If Condition="[resultClick]" DisplayName="画像クリック結果判定" sap:VirtualizedContainerService.HintSize="487,412" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[resultClick]" DisplayName="画像クリック結果判定" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
@@ -525,6 +556,14 @@
                                   <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                 </Assign.Value>
                               </Assign>
+                              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[isFirst]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
                             </Sequence>
                             <FlowStep.Next>
                               <x:Reference>__ReferenceID0</x:Reference>
@@ -727,7 +766,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">502,1393 502,1443</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="GO" sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                            <Sequence DisplayName="GO" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="ui:Image" Name="image" />
                                               </Sequence.Variables>
@@ -740,13 +779,9 @@
                                               <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\902_GO.png" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LoadImage_18" Image="[image]" />
                                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                                                    <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                                                   <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="ready_before">
-                                                    <Literal x:TypeArguments="x:Int32" Value="200" />
-                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="ready_before">200</InArgument>
                                                   <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
                                                   <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click" />
                                                 </ui:InvokeWorkflowFile.Arguments>
@@ -1449,7 +1484,7 @@
                                                                                         <av:PointCollection x:Key="ConnectorLocation">903,2546 933,2546 933,158 601,158</av:PointCollection>
                                                                                       </scg:Dictionary>
                                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                                    <Sequence DisplayName="後処理" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                                                                    <Sequence DisplayName="後処理" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_50">
                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1461,6 +1496,14 @@
                                                                                         </Assign.To>
                                                                                         <Assign.Value>
                                                                                           <InArgument x:TypeArguments="x:Int32">[io_battle_num + 1]</InArgument>
+                                                                                        </Assign.Value>
+                                                                                      </Assign>
+                                                                                      <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                                                                        <Assign.To>
+                                                                                          <OutArgument x:TypeArguments="x:Boolean">[isFirst]</OutArgument>
+                                                                                        </Assign.To>
+                                                                                        <Assign.Value>
+                                                                                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                                                                         </Assign.Value>
                                                                                       </Assign>
                                                                                     </Sequence>
