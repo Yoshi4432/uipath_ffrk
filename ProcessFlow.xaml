@@ -1665,15 +1665,9 @@
             </ActivityAction.Argument>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="UtilBusiness\ExceptionHandling.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isMulti">
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_isMulti" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_isHitti" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isGenmu">
-                  <Literal x:TypeArguments="x:Boolean" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isMulti">[in_isMulti]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">[in_isHitti]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isGenmu">False</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1696,15 +1690,9 @@
             </ActivityAction.Argument>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_56" UnSafe="False" WorkflowFileName="UtilBusiness\ExceptionHandling.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isMulti">
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_isMulti" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_isHitti" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isGenmu">
-                  <Literal x:TypeArguments="x:Boolean" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isMulti">[in_isMulti]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">[in_isHitti]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isGenmu">False</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1727,15 +1715,9 @@
             </ActivityAction.Argument>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_57" UnSafe="False" WorkflowFileName="UtilBusiness\ExceptionHandling.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isMulti">
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_isMulti" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_isHitti" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isGenmu">
-                  <Literal x:TypeArguments="x:Boolean" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isMulti">[in_isMulti]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">[in_isHitti]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isGenmu">False</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1758,12 +1740,8 @@
             </ActivityAction.Argument>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_58" UnSafe="False" WorkflowFileName="UtilBusiness\ExceptionHandling.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isMulti">
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_isMulti" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_isHitti" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isMulti">[in_isMulti]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">[in_isHitti]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="i_GenmuSeries" />
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
