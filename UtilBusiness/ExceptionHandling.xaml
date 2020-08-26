@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="i_isMulti" Type="InArgument(x:Boolean)" />
     <x:Property Name="i_isHitti" Type="InArgument(x:Boolean)" />
-    <x:Property Name="i_genmuSeries" Type="InArgument(x:String)" />
+    <x:Property Name="i_GenmuSeries" Type="InArgument(x:String)" />
   </x:Members>
   <sap:VirtualizedContainerService.HintSize>1008,983</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
@@ -118,7 +118,7 @@
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="リスタート" sap:VirtualizedContainerService.HintSize="705,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Util\RestartFFRK.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Boolean" x:Key="i_isGenmu">
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="not String.IsNullOrEmpty(i_genmuSeries)" />
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="not String.IsNullOrEmpty(i_GenmuSeries)" />
           </InArgument>
           <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">
             <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="i_isHitti" />
@@ -377,7 +377,7 @@
             </Sequence>
           </While>
         </Sequence>
-        <If Condition="[String.IsNullOrEmpty(i_genmuSeries)]" DisplayName="幻夢の復帰" sap:VirtualizedContainerService.HintSize="663,730" sap2010:WorkflowViewState.IdRef="If_7">
+        <If Condition="[String.IsNullOrEmpty(i_GenmuSeries)]" DisplayName="幻夢の復帰" sap:VirtualizedContainerService.HintSize="663,730" sap2010:WorkflowViewState.IdRef="If_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg1:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -447,7 +447,7 @@
                       <InArgument x:TypeArguments="ui:Image">[Nothing]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[i_genmuSeries = &quot;Job&quot;]" DisplayName="Job" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_10">
+                  <If Condition="[i_GenmuSeries = &quot;Job&quot;]" DisplayName="Job" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg1:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
