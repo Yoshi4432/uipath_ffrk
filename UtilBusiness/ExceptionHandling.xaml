@@ -3,8 +3,9 @@
     <x:Property Name="i_isMulti" Type="InArgument(x:Boolean)" />
     <x:Property Name="i_isHitti" Type="InArgument(x:Boolean)" />
     <x:Property Name="i_GenmuSeries" Type="InArgument(x:String)" />
+    <x:Property Name="i_mode" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>702,1429</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1008,2189</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
   <TextExpression.NamespacesForImplementation>
@@ -38,9 +39,10 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.Configuration.Install</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg1:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="284,1264" sap2010:WorkflowViewState.IdRef="Sequence_34">
+  <Sequence DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="460,2024" sap2010:WorkflowViewState.IdRef="Sequence_34">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg1:Dictionary(x:String, ui:GenericValue)" Name="Config" />
       <Variable x:TypeArguments="x:String" Name="AndAppDir" />
@@ -52,7 +54,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg1:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="プロパティ読み込み" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_35">
+    <Sequence DisplayName="プロパティ読み込み" sap:VirtualizedContainerService.HintSize="418,66" sap2010:WorkflowViewState.IdRef="Sequence_35">
       <sap:WorkflowViewStateService.ViewState>
         <scg1:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -89,7 +91,7 @@
         </Assign>
       </Sequence>
     </Sequence>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="異常終了メール送信" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="UtilBusiness\SendAbendMail.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="異常終了メール送信" sap:VirtualizedContainerService.HintSize="418,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="UtilBusiness\SendAbendMail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg1:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
@@ -100,8 +102,8 @@
         </scg1:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="FFRKを強制終了" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="FFRK" />
-    <ui:StartProcess WorkingDirectory="{x:Null}" sap2010:Annotation.AnnotationText="引数に設定されているappidは環境によって違うかも.&#xA;&#xA;その場合は、Desktopあたりに生成されたショートカットのプロパティを参照して適宜変更してくだしあ." Arguments="[AndAppDir + &quot;\Update.exe --processStart AndApp.exe --process-start-args &quot; +  Chr(34) + &quot;--appId 5675552572702720&quot; + Chr(34)]" DisplayName="FFRK開始" FileName="[AndAppDir + &quot;\Update.exe&quot;]" sap:VirtualizedContainerService.HintSize="242,153" sap2010:WorkflowViewState.IdRef="StartProcess_6">
+    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="FFRKを強制終了" sap:VirtualizedContainerService.HintSize="418,22" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="FFRK" />
+    <ui:StartProcess WorkingDirectory="{x:Null}" sap2010:Annotation.AnnotationText="引数に設定されているappidは環境によって違うかも.&#xA;&#xA;その場合は、Desktopあたりに生成されたショートカットのプロパティを参照して適宜変更してくだしあ." Arguments="[AndAppDir + &quot;\Update.exe --processStart AndApp.exe --process-start-args &quot; +  Chr(34) + &quot;--appId 5675552572702720&quot; + Chr(34)]" DisplayName="FFRK開始" FileName="[AndAppDir + &quot;\Update.exe&quot;]" sap:VirtualizedContainerService.HintSize="418,153" sap2010:WorkflowViewState.IdRef="StartProcess_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg1:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -110,14 +112,14 @@
         </scg1:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:StartProcess>
-    <Sequence DisplayName="ログイン～メイン処理開始まで自動実行" sap:VirtualizedContainerService.HintSize="242,552" sap2010:WorkflowViewState.IdRef="Sequence_44">
+    <Sequence DisplayName="ログイン～メイン処理開始まで自動実行" sap:VirtualizedContainerService.HintSize="418,1008" sap2010:WorkflowViewState.IdRef="Sequence_44">
       <sap:WorkflowViewStateService.ViewState>
         <scg1:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg1:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="リスタート" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Util\RestartFFRK.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="リスタート" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Util\RestartFFRK.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Boolean" x:Key="i_isGenmu">[not String.IsNullOrEmpty(i_GenmuSeries)]</InArgument>
           <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">[i_isHitti]</InArgument>
@@ -129,7 +131,7 @@
           </scg1:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="左に寄せる" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="13ec1076732e0e9c0a990b6bffc78847" Selector="&lt;wnd app='ffrk.exe' /&gt;">
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="左に寄せる" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="13ec1076732e0e9c0a990b6bffc78847" Selector="&lt;wnd app='ffrk.exe' /&gt;">
         <ui:WindowScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -152,7 +154,7 @@
           </scg1:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:WindowScope>
-      <Sequence DisplayName="挑戦中なら脱出" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_73">
+      <Sequence DisplayName="挑戦中なら脱出" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_73">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="resultClick" />
         </Sequence.Variables>
@@ -269,7 +271,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="マルチボタン" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
+      <Sequence DisplayName="マルチボタン" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
         <sap:WorkflowViewStateService.ViewState>
           <scg1:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -320,14 +322,14 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="イベント or マルチボス選択" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_42">
+      <Sequence DisplayName="イベント or マルチボス選択" sap:VirtualizedContainerService.HintSize="242,522" sap2010:WorkflowViewState.IdRef="Sequence_42">
         <sap:WorkflowViewStateService.ViewState>
           <scg1:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg1:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[i_isMulti]" DisplayName="マルチ準備" sap:VirtualizedContainerService.HintSize="663,51" sap2010:WorkflowViewState.IdRef="If_2">
+        <If Condition="[i_isMulti]" DisplayName="マルチ準備" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg1:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -348,7 +350,7 @@
             </Sequence>
           </If.Else>
         </If>
-        <If Condition="[i_isHitti]" DisplayName="筆致準備" sap:VirtualizedContainerService.HintSize="663,51" sap2010:WorkflowViewState.IdRef="If_6">
+        <If Condition="[i_isHitti]" DisplayName="筆致準備" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg1:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -369,7 +371,28 @@
             </Sequence>
           </If.Else>
         </If>
-        <Sequence DisplayName="ボス選択" sap:VirtualizedContainerService.HintSize="663,66" sap2010:WorkflowViewState.IdRef="Sequence_50">
+        <If Condition="[i_mode = &quot;がんさく&quot;]" DisplayName="がんさく準備" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg1:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\100_variables\003_がんさく\002_イベント.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_13" Image="[image]" />
+          </If.Then>
+          <If.Else>
+            <Sequence DisplayName="Nothing to Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_78">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg1:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </If.Else>
+        </If>
+        <Sequence DisplayName="ボス選択" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_50">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Int32" Name="loopNum" />
           </Sequence.Variables>
@@ -515,10 +538,10 @@
             </Sequence>
           </While>
         </Sequence>
-        <If Condition="[String.IsNullOrEmpty(i_GenmuSeries)]" DisplayName="幻夢の復帰" sap:VirtualizedContainerService.HintSize="663,730" sap2010:WorkflowViewState.IdRef="If_7">
+        <If Condition="[String.IsNullOrEmpty(i_GenmuSeries)]" DisplayName="幻夢の復帰" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg1:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg1:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -785,10 +808,10 @@
         </If>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="ミス対応" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_45">
+    <Sequence DisplayName="ミス対応" sap:VirtualizedContainerService.HintSize="418,370" sap2010:WorkflowViewState.IdRef="Sequence_45">
       <sap:WorkflowViewStateService.ViewState>
         <scg1:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg1:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -799,7 +822,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg1:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\010_リスタート\101_フレンド登録やめとく.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_4" Image="[image]" />
+        <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\001_メイン\002_フレンド登録やめとく.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_4" Image="[image]" />
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
@@ -817,6 +840,6 @@
         </ui:InvokeWorkflowFile>
       </Sequence>
     </Sequence>
-    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="AndAppを強制終了" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="AndApp" />
+    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="AndAppを強制終了" sap:VirtualizedContainerService.HintSize="418,22" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="AndApp" />
   </Sequence>
 </Activity>
