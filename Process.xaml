@@ -261,7 +261,7 @@
                       <Literal x:TypeArguments="x:Boolean" />
                     </InArgument>
                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_isHitti">
-                      <Literal x:TypeArguments="x:Boolean" Value="True" />
+                      <Literal x:TypeArguments="x:Boolean" />
                     </InArgument>
                     <InOutArgument x:TypeArguments="x:Int32" x:Key="io_battle_num">
                       <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="battle_num" />
