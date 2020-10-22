@@ -5,7 +5,7 @@
     <x:Property Name="i_GenmuSeries" Type="InArgument(x:String)" />
     <x:Property Name="i_mode" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1008,1885</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1008,3108</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
   <TextExpression.NamespacesForImplementation>
@@ -39,10 +39,9 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.Configuration.Install</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg1:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="326,1720" sap2010:WorkflowViewState.IdRef="Sequence_34">
+  <Sequence DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="1002,2943" sap2010:WorkflowViewState.IdRef="Sequence_34">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg1:Dictionary(x:String, ui:GenericValue)" Name="Config" />
       <Variable x:TypeArguments="x:String" Name="AndAppDir" />
@@ -54,7 +53,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg1:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="プロパティ読み込み" sap:VirtualizedContainerService.HintSize="284,66" sap2010:WorkflowViewState.IdRef="Sequence_35">
+    <Sequence DisplayName="プロパティ読み込み" sap:VirtualizedContainerService.HintSize="960,66" sap2010:WorkflowViewState.IdRef="Sequence_35">
       <sap:WorkflowViewStateService.ViewState>
         <scg1:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -91,7 +90,7 @@
         </Assign>
       </Sequence>
     </Sequence>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="異常終了メール送信" sap:VirtualizedContainerService.HintSize="284,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="UtilBusiness\SendAbendMail.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="異常終了メール送信" sap:VirtualizedContainerService.HintSize="960,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="UtilBusiness\SendAbendMail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg1:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
@@ -102,8 +101,8 @@
         </scg1:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="FFRKを強制終了" sap:VirtualizedContainerService.HintSize="284,22" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="FFRK" />
-    <ui:StartProcess WorkingDirectory="{x:Null}" sap2010:Annotation.AnnotationText="引数に設定されているappidは環境によって違うかも.&#xA;&#xA;その場合は、Desktopあたりに生成されたショートカットのプロパティを参照して適宜変更してくだしあ." Arguments="[AndAppDir + &quot;\Update.exe --processStart AndApp.exe --process-start-args &quot; +  Chr(34) + &quot;--appId 5675552572702720&quot; + Chr(34)]" DisplayName="FFRK開始" FileName="[AndAppDir + &quot;\Update.exe&quot;]" sap:VirtualizedContainerService.HintSize="284,153" sap2010:WorkflowViewState.IdRef="StartProcess_6">
+    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="FFRKを強制終了" sap:VirtualizedContainerService.HintSize="960,22" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="FFRK" />
+    <ui:StartProcess WorkingDirectory="{x:Null}" sap2010:Annotation.AnnotationText="引数に設定されているappidは環境によって違うかも.&#xA;&#xA;その場合は、Desktopあたりに生成されたショートカットのプロパティを参照して適宜変更してくだしあ." Arguments="[AndAppDir + &quot;\Update.exe --processStart AndApp.exe --process-start-args &quot; +  Chr(34) + &quot;--appId 5675552572702720&quot; + Chr(34)]" DisplayName="FFRK開始" FileName="[AndAppDir + &quot;\Update.exe&quot;]" sap:VirtualizedContainerService.HintSize="960,153" sap2010:WorkflowViewState.IdRef="StartProcess_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg1:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -131,7 +130,7 @@
           </scg1:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="左に寄せる" sap:VirtualizedContainerService.HintSize="918,51" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="6441cacea285c9ec49ae6e884043075c" Selector="&lt;wnd app='ffrk.exe' cls='KickmotorMain' title='FINAL FANTASY Record Keeper' /&gt;">
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ContinueOnError="True" DisplayName="左に寄せる" sap:VirtualizedContainerService.HintSize="918,51" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="6441cacea285c9ec49ae6e884043075c" Selector="&lt;wnd app='ffrk.exe' cls='KickmotorMain' title='FINAL FANTASY Record Keeper' /&gt;">
         <ui:WindowScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
