@@ -1,6 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ProcessFlowGenmu" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="i_series" Type="InArgument(x:String)" />
+    <x:Property Name="i_mode" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -253,14 +254,11 @@
             </ActivityAction.Argument>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="UtilBusiness\ExceptionHandling.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isMulti">
-                  <Literal x:TypeArguments="x:Boolean" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="i_isHitti">
-                  <Literal x:TypeArguments="x:Boolean" />
-                </InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="i_GenmuSeries">
                   <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="i_series" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="i_mode">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="i_mode" />
                 </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
