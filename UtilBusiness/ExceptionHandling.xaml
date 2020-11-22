@@ -3,7 +3,7 @@
     <x:Property Name="i_GenmuSeries" Type="InArgument(x:String)" />
     <x:Property Name="i_mode" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1008,1999</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1008,2090</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
   <TextExpression.NamespacesForImplementation>
@@ -41,10 +41,9 @@
       <AssemblyReference>System.Configuration.Install</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg1:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="705,1834" sap2010:WorkflowViewState.IdRef="Sequence_34">
+  <Sequence DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="705,1925" sap2010:WorkflowViewState.IdRef="Sequence_34">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg1:Dictionary(x:String, ui:GenericValue)" Name="Config" />
       <Variable x:TypeArguments="x:String" Name="AndAppDir" />
@@ -93,6 +92,17 @@
         </Assign>
       </Sequence>
     </Sequence>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="スクリーンショットを保存" sap:VirtualizedContainerService.HintSize="663,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Util\TakeScreenshot.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg1:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg1:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="異常終了メール送信" sap:VirtualizedContainerService.HintSize="663,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="UtilBusiness\SendAbendMail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg1:Dictionary x:TypeArguments="x:String, Argument" />
