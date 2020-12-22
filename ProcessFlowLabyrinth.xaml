@@ -147,12 +147,12 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap2010:Annotation.AnnotationText="絵画を判断できるようになるまで待機" DisplayName="待機" sap:VirtualizedContainerService.HintSize="376,290" sap2010:WorkflowViewState.IdRef="Sequence_213">
+                  <Sequence sap2010:Annotation.AnnotationText="絵画を判断できるようになるまで待機" DisplayName="待機" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="Sequence_213">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LoadImage DisplayName="画像" FileName="Assets\images\002_ラビリンス\210_絵画選択中判定.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_69" Image="[image]">
@@ -176,11 +176,11 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ImageFound>
                   </Sequence>
-                  <Sequence DisplayName="取得" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_142">
+                  <Sequence DisplayName="取得" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_142">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="実行" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_72" UnSafe="False" WorkflowFileName="UtilBusiness\Labyrinth\GetLabyrinthPicture.xaml">
@@ -196,7 +196,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
-                  <Sequence DisplayName="押下" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_210">
+                  <Sequence DisplayName="押下" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_210">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -341,7 +341,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">200,1488 200,1549</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="閉じる（ダンジョンクリア）" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                                        <Sequence DisplayName="閉じる（ダンジョンクリア）" sap:VirtualizedContainerService.HintSize="418,370" sap2010:WorkflowViewState.IdRef="Sequence_158">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="ui:Image" Name="image" />
                                           </Sequence.Variables>
@@ -358,7 +358,7 @@
                                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:LoadImage DisplayName="筆致画像" FileName="Assets\images\900_汎用\004_閉じる.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_56" Image="[image]">
+                                            <ui:LoadImage DisplayName="画像" FileName="Assets\images\900_汎用\004_閉じる.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_56" Image="[image]">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -408,7 +408,7 @@
                                                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:LoadImage DisplayName="筆致画像" FileName="Assets\images\900_汎用\004_閉じる.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_70" Image="[image]">
+                                                <ui:LoadImage DisplayName="画像" FileName="Assets\images\900_汎用\004_閉じる.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_70" Image="[image]">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -457,7 +457,7 @@
                                                         <av:PointCollection x:Key="ConnectorLocation">1561,527 1460,527</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence DisplayName="実行（ラビリンスへ挑戦）" sap:VirtualizedContainerService.HintSize="418,271" sap2010:WorkflowViewState.IdRef="Sequence_207">
+                                                    <Sequence DisplayName="実行（ラビリンスへ挑戦）" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_207">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
