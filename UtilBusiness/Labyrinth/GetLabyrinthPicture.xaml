@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1057,2395</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1057,2532</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetLabyrinthPicture_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -103,7 +103,7 @@
               <av:PointCollection x:Key="ConnectorLocation">501,307 501,357</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="宝物庫？" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_23">
+          <Sequence DisplayName="宝物庫？" sap:VirtualizedContainerService.HintSize="418,351" sap2010:WorkflowViewState.IdRef="Sequence_23">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -124,7 +124,7 @@
               </ui:LoadImage>
               <ui:FindImageMatches ContinueOnError="True" DisplayName="一致する画像を探す" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="FindImageMatches_1" Matches="[matches]">
                 <ui:FindImageMatches.Image>
-                  <ui:ImageTarget TargetImageBase64="{x:Null}" Accuracy="0.9" Image="[o_image]" />
+                  <ui:ImageTarget TargetImageBase64="{x:Null}" Accuracy="0.8" Image="[o_image]" />
                 </ui:FindImageMatches.Image>
                 <ui:FindImageMatches.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
