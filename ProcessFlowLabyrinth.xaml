@@ -84,7 +84,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="result" />
       <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="あと何回チャレンジするか（ミッション用）" Name="limitChallengeNum">
         <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="100" />
+          <Literal x:TypeArguments="x:Int32" Value="1" />
         </Variable.Default>
       </Variable>
     </Sequence.Variables>
