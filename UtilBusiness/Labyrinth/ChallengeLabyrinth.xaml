@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>897,1225</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1060,1225</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ChallengeLabyrinth_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -127,7 +127,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LoadImage DisplayName="画像" FileName="Assets\images\002_挑戦する.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_51" Image="[image]">
+              <ui:LoadImage DisplayName="画像" FileName="Assets\images\900_汎用\008_挑戦する.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_51" Image="[image]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -384,7 +384,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">100,838 70,838 70,390 401,390</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="スタミナ回復" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_153">
+                              <Sequence DisplayName="スタミナ回復" sap:VirtualizedContainerService.HintSize="418,271" sap2010:WorkflowViewState.IdRef="Sequence_153">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -400,7 +400,9 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="実行" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_77" UnSafe="False" WorkflowFileName="UtilBusiness\RecoverStamina.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:Boolean" x:Key="i_isTwitterFirst">[io_isTwitterFirst]</InArgument>
+                                      <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_isTwitterFirst">
+                                        <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="io_isTwitterFirst" />
+                                      </InOutArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">

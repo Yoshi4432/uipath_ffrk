@@ -5,8 +5,9 @@
     <x:Property Name="ready_before" Type="InArgument(x:Int32)" />
     <x:Property Name="ready_after" Type="InArgument(x:Int32)" />
     <x:Property sap2010:Annotation.AnnotationText="TRUE：クリック成功" Name="o_result_click" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="accuracy" Type="InArgument(x:Double)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1060,1755</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>900,1861</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -55,9 +56,10 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="セレクタの使用&#xA;　⇒高速になる&#xA;　　アクティブ化する" DisplayName="画像クリック" sap:VirtualizedContainerService.HintSize="889,1590" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="セレクタの使用&#xA;　⇒高速になる&#xA;　　アクティブ化する" DisplayName="画像クリック" sap:VirtualizedContainerService.HintSize="889,1696" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="selector" />
       <Variable x:TypeArguments="x:Boolean" Name="result" />
@@ -68,7 +70,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="デフォルト値の定義" sap:VirtualizedContainerService.HintSize="847,476" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence DisplayName="デフォルト値の定義" sap:VirtualizedContainerService.HintSize="847,582" sap2010:WorkflowViewState.IdRef="Sequence_21">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -195,6 +197,44 @@
           </If.Else>
         </If>
       </Sequence>
+      <Sequence DisplayName="accuracy" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_42">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If Condition="[accuracy.Equals(0.0)]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="549,300" sap2010:WorkflowViewState.IdRef="If_7">
+          <If.Then>
+            <Sequence DisplayName="補正" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_40">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Double">[accuracy]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Double">0.8</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence DisplayName="Nothing to Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_41">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </If.Else>
+        </If>
+      </Sequence>
       <Sequence DisplayName="セレクタ" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -280,7 +320,7 @@
                       </ui:CursorPosition>
                     </ui:ClickImage.CursorPosition>
                     <ui:ClickImage.Image>
-                      <ui:ImageTarget TargetImageBase64="{x:Null}" Accuracy="0.8" Image="[image]" />
+                      <ui:ImageTarget TargetImageBase64="{x:Null}" Accuracy="[accuracy]" Image="[image]" />
                     </ui:ClickImage.Image>
                     <ui:ClickImage.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[selector]" TimeoutMS="[timeout]" WaitForReady="NONE" />
@@ -336,7 +376,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="終了処理" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <Sequence DisplayName="終了処理" sap:VirtualizedContainerService.HintSize="304,149" sap2010:WorkflowViewState.IdRef="Sequence_23">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>

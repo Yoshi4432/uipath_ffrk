@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1318,2943</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1318,2983</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RestartFFRK_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -1225,7 +1225,7 @@
                                                         <av:PointCollection x:Key="ConnectorLocation">803,1688 803,1738</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence DisplayName="出撃中をクリック" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_228">
+                                                    <Sequence DisplayName="探索中をクリック" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_228">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1256,7 +1256,7 @@
                                                       </ui:InvokeWorkflowFile>
                                                     </Sequence>
                                                     <FlowStep.Next>
-                                                      <FlowDecision x:Name="__ReferenceID27" Condition="[result]" DisplayName="出撃中だった？" sap:VirtualizedContainerService.HintSize="80,87" sap2010:WorkflowViewState.IdRef="FlowDecision_14">
+                                                      <FlowDecision x:Name="__ReferenceID27" Condition="[result]" DisplayName="探索中だった？" sap:VirtualizedContainerService.HintSize="80,87" sap2010:WorkflowViewState.IdRef="FlowDecision_14">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>

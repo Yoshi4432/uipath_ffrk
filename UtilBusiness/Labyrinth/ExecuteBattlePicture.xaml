@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1060,947</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>900,947</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExecuteBattlePicture_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -179,7 +179,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">230,444 230,474 243,474 243,494</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="OK（摩耗）" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_183">
+              <Sequence DisplayName="OK（摩耗）" sap:VirtualizedContainerService.HintSize="418,370" sap2010:WorkflowViewState.IdRef="Sequence_183">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="ui:Image" Name="image" />
                 </Sequence.Variables>
@@ -193,28 +193,33 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LoadImage DisplayName="画像" FileName="Assets\images\900_汎用\002_OK.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_63" Image="[image]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LoadImage>
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_84" UnSafe="False" WorkflowFileName="Util\ClickImage.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
+                      <InArgument x:TypeArguments="ui:Image" x:Key="image">
+                        <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
+                      </InArgument>
                       <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
                       <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
                       <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click" />
+                      <InArgument x:TypeArguments="x:Double" x:Key="accuracy">
+                        <Literal x:TypeArguments="x:Double" Value="0.9" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>

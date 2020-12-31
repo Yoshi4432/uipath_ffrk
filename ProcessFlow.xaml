@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1206,2739</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1060,2739</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -644,7 +644,7 @@
                                 <av:PointCollection x:Key="ConnectorLocation">502,1024 502,1074</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="バトル開始" sap:VirtualizedContainerService.HintSize="242,264" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                            <Sequence DisplayName="バトル開始" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_25">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="ui:Image" Name="image" />
                                 <Variable x:TypeArguments="x:Boolean" Name="resultClick" />
@@ -885,9 +885,11 @@
                                         <av:PointCollection x:Key="ConnectorLocation">201,1270 201,1327</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="スタミナ回復" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_64" UnSafe="False" WorkflowFileName="UtilBusiness\RecoverStamina.xaml">
+                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="スタミナ回復" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_64" UnSafe="False" WorkflowFileName="UtilBusiness\RecoverStamina.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:Boolean" x:Key="i_isTwitterFirst">[isTwitterFirst]</InArgument>
+                                        <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_isTwitterFirst">
+                                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isTwitterFirst" />
+                                        </InOutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
