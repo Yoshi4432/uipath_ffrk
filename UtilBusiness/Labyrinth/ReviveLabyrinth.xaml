@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ReviveLabyrinth" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1060,1335" sap2010:WorkflowViewState.IdRef="ReviveLabyrinth_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ReviveLabyrinth" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1060,1446" sap2010:WorkflowViewState.IdRef="ReviveLabyrinth_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
       <x:String>System.Activities</x:String>
@@ -49,6 +49,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="ReviveLabyrinth" sap:VirtualizedContainerService.HintSize="636,1281" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -56,6 +57,11 @@
       <Variable x:TypeArguments="ui:Image" Name="image" />
       <Variable x:TypeArguments="x:Boolean" Name="result" />
       <Variable x:TypeArguments="x:Int32" Name="pictureType" />
+      <Variable x:TypeArguments="x:Int32" Name="timeoutTypical">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="10000" />
+        </Variable.Default>
+      </Variable>
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -103,7 +109,9 @@
               <InArgument x:TypeArguments="ui:Image" x:Key="i_image">
                 <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
               </InArgument>
-              <InArgument x:TypeArguments="x:Int32" x:Key="i_timeout" />
+              <InArgument x:TypeArguments="x:Int32" x:Key="i_timeout">
+                <Literal x:TypeArguments="x:Int32" Value="15000" />
+              </InArgument>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result">
                 <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
               </OutArgument>
@@ -188,7 +196,7 @@
                         <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
                       </InArgument>
                       <InArgument x:TypeArguments="x:Int32" x:Key="i_timeout">
-                        <Literal x:TypeArguments="x:Int32" Value="10000" />
+                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="timeoutTypical" />
                       </InArgument>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result">
                         <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
@@ -250,13 +258,13 @@
                           <av:PointCollection x:Key="ConnectorLocation">502,834 502,905</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="探索？" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <Sequence DisplayName="探索？" sap:VirtualizedContainerService.HintSize="418,370" sap2010:WorkflowViewState.IdRef="Sequence_10">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="画像検索" sap:VirtualizedContainerService.HintSize="376,259" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <Sequence DisplayName="画像検索" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_9">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -270,20 +278,19 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:LoadImage>
-                          <ui:ImageFound DisplayName="画像の有無を確認" Found="[result]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="ImageFound_3">
-                            <ui:ImageFound.Image>
-                              <ui:ImageTarget TargetImageBase64="{x:Null}" Accuracy="0.8" Image="[image]" />
-                            </ui:ImageFound.Image>
-                            <ui:ImageFound.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
-                            </ui:ImageFound.Target>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:ImageFound>
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="ワークフローファイルを呼び出し" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Util\CheckImage.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="ui:Image" x:Key="i_image">
+                                <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="i_timeout">
+                                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="timeoutTypical" />
+                              </InArgument>
+                              <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result">
+                                <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
+                              </OutArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
                         </Sequence>
                       </Sequence>
                       <FlowStep.Next>
