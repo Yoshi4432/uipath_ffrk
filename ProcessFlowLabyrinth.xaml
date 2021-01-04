@@ -81,11 +81,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="isChallenging" />
       <Variable x:TypeArguments="x:Boolean" Name="isTwitterFirst" />
       <Variable x:TypeArguments="x:Boolean" Name="result" />
-      <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="あと何回チャレンジするか（ミッション用）" Name="limitChallengeNum">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="100" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="あと何回チャレンジするか（ミッション用）" Default="100" Name="limitChallengeNum" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -348,7 +344,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">557,1488 557,1518 501.5,1518 501.5,1549</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="閉じる（ダンジョンクリア）" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                                        <Sequence DisplayName="閉じる（ダンジョンクリア）" sap:VirtualizedContainerService.HintSize="418,370" sap2010:WorkflowViewState.IdRef="Sequence_158">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -833,7 +829,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">2062,191 2062,241</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="変数定義（初期）" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_110">
+            <Sequence DisplayName="変数定義（初期）" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_110">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -845,6 +841,14 @@
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[limitChallengeNum]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[Integer.Parse(in_Config("Limit_Loop_Labyrinth"))]</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
@@ -938,7 +942,7 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="ui:ImageOperationException" sap:VirtualizedContainerService.HintSize="2666,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:ImageOperationException" sap:VirtualizedContainerService.HintSize="3206,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -962,7 +966,7 @@
             </ui:InvokeWorkflowFile>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:ActivityTimeoutException" sap:VirtualizedContainerService.HintSize="2666,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+        <Catch x:TypeArguments="ui:ActivityTimeoutException" sap:VirtualizedContainerService.HintSize="3206,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -986,7 +990,7 @@
             </ui:InvokeWorkflowFile>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="2666,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+        <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="3206,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
