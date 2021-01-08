@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>754,1177</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>705,1274</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessFlowGenmu_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -34,7 +34,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -51,9 +51,14 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessFlowGenmuMain" sap:VirtualizedContainerService.HintSize="714,1012" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence DisplayName="ProcessFlowGenmuMain" sap:VirtualizedContainerService.HintSize="715,1109" sap2010:WorkflowViewState.IdRef="Sequence_13">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Image" Name="image" />
       <Variable x:TypeArguments="x:Boolean" Name="result" />
@@ -63,7 +68,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="672,920" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="673,1017" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Flowchart sap2010:Annotation.AnnotationText="幻夢周回用&#xA;&#xA;自動周回が開始された後に実行されることを想定します." DisplayName="ProcessFlowGenmu" sap:VirtualizedContainerService.HintSize="635,790" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <sap:WorkflowViewStateService.ViewState>
@@ -115,7 +120,7 @@
                       <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
                     </InArgument>
                     <InArgument x:TypeArguments="x:Int32" x:Key="i_timeout">
-                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="1000 * 60" />
+                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="1000 * 60 * 15" />
                     </InArgument>
                     <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result">
                       <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
@@ -131,10 +136,7 @@
               </Sequence>
             </Sequence>
             <FlowStep.Next>
-              <FlowDecision x:Name="__ReferenceID1" DisplayName="In Auto Battle?" sap:VirtualizedContainerService.HintSize="83,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                <FlowDecision.Condition>
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="result" />
-                </FlowDecision.Condition>
+              <FlowDecision x:Name="__ReferenceID1" Condition="[result]" DisplayName="In Auto Battle?" sap:VirtualizedContainerService.HintSize="83,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -144,9 +146,6 @@
                     <av:PointCollection x:Key="FalseConnector">543,284.5 561,284.5 561,348 501,348 501,378</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <FlowDecision.True>
-                  <x:Reference>__ReferenceID0</x:Reference>
-                </FlowDecision.True>
                 <FlowDecision.False>
                   <FlowStep x:Name="__ReferenceID2">
                     <sap:WorkflowViewStateService.ViewState>
@@ -179,15 +178,11 @@
                         </ui:LoadImage>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Util\ClickImage.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                              <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                             <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
                             <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
                             <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click">
-                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
-                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click">[result]</OutArgument>
                             <InArgument x:TypeArguments="x:Double" x:Key="accuracy" />
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
@@ -263,7 +258,7 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="638,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="639,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
