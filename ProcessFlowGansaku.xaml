@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>754,1263</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>754,1746</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessFlowGansaku_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -63,7 +63,6 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -72,7 +71,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ProcessFlowGansakuMain" sap:VirtualizedContainerService.HintSize="715,1098" sap2010:WorkflowViewState.IdRef="Sequence_37">
+  <Sequence DisplayName="ProcessFlowGansakuMain" sap:VirtualizedContainerService.HintSize="715,1581" sap2010:WorkflowViewState.IdRef="Sequence_37">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Image" Name="image" />
       <Variable x:TypeArguments="x:Boolean" Name="result" />
@@ -84,7 +83,7 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="673,1006" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="673,1489" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -114,7 +113,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">200,919 200,949 200.5,949 200.5,979</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Check In Auto Battle?" sap:VirtualizedContainerService.HintSize="418,370" sap2010:WorkflowViewState.IdRef="Sequence_129">
+            <Sequence DisplayName="Check In Auto Battle?" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_129">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -137,15 +136,9 @@
                 </ui:LoadImage>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Check Image" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_67" UnSafe="False" WorkflowFileName="Util\CheckImage.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="ui:Image" x:Key="i_image">
-                      <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="i_timeout">
-                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="1000 * 60 * 10" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result">
-                      <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
-                    </OutArgument>
+                    <InArgument x:TypeArguments="ui:Image" x:Key="i_image">[image]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="i_timeout">[1000 * 60 * 10]</InArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result">[result]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -236,10 +229,7 @@
               </Sequence>
             </Sequence>
             <FlowStep.Next>
-              <FlowDecision x:Name="__ReferenceID5" DisplayName="isLoopFirst?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
-                <FlowDecision.Condition>
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="isFirst" />
-                </FlowDecision.Condition>
+              <FlowDecision x:Name="__ReferenceID5" Condition="[isFirst]" DisplayName="isLoopFirst?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -292,9 +282,7 @@
                             </ui:LoadImage>
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="ワークフローファイルを呼び出し" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_70" UnSafe="False" WorkflowFileName="Util\ClickImage.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                                  <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                                </InArgument>
+                                <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                                 <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
                                 <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
                                 <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
@@ -343,9 +331,7 @@
                                 </ui:LoadImage>
                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_71" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                                      <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                                     <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
                                     <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
                                     <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
