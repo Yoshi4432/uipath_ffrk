@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1008,651</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>754,1177</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessFlowGenmu_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -53,23 +53,28 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessFlowGenmuMain" sap:VirtualizedContainerService.HintSize="476,410" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence DisplayName="ProcessFlowGenmuMain" sap:VirtualizedContainerService.HintSize="714,1012" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:Image" Name="image" />
+      <Variable x:TypeArguments="x:Boolean" Name="result" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="434,318" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="672,920" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Flowchart sap2010:Annotation.AnnotationText="幻夢周回用&#xA;&#xA;自動周回が開始された後に実行されることを想定します." DisplayName="ProcessFlowGenmu" sap:VirtualizedContainerService.HintSize="634,693" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart sap2010:Annotation.AnnotationText="幻夢周回用&#xA;&#xA;自動周回が開始された後に実行されることを想定します." DisplayName="ProcessFlowGenmu" sap:VirtualizedContainerService.HintSize="635,790" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <av:Point x:Key="ShapeLocation">170,0</av:Point>
+              <av:Point x:Key="ShapeLocation">471,0</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">200,75 200,125</av:PointCollection>
-              <x:Double x:Key="Width">600</x:Double>
+              <av:PointCollection x:Key="ConnectorLocation">501,75 501,125</av:PointCollection>
+              <x:Double x:Key="Height">697</x:Double>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Double x:Key="Width">601</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
@@ -78,173 +83,190 @@
           <FlowStep x:Name="__ReferenceID0">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">100,125</av:Point>
-                <av:Size x:Key="ShapeSize">200,97</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">200,222 200,252 201,252 201,272</av:PointCollection>
+                <av:Point x:Key="ShapeLocation">401,125</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">501,191 501,221 501.5,221 501.5,241</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="ネットワークエラー監視" sap:VirtualizedContainerService.HintSize="200,97" sap2010:WorkflowViewState.IdRef="Sequence_2">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="ui:Image" Name="image" />
-              </Sequence.Variables>
+            <Sequence DisplayName="Check In Auto Battle?" sap:VirtualizedContainerService.HintSize="418,370" sap2010:WorkflowViewState.IdRef="Sequence_15">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="FFRKネットワークエラー実行" sap:VirtualizedContainerService.HintSize="663,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="FFRKネットワークエラー対応" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="UtilBusiness/RetryInNetworkError.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click" />
-                    <InArgument x:TypeArguments="x:Int32" x:Key="i_type">0</InArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
-              </Sequence>
-              <Sequence DisplayName="システムエラー対応" sap:VirtualizedContainerService.HintSize="663,593" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:Boolean" Name="resultFind" />
-                </Sequence.Variables>
+              <Sequence DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\901_Condition_システムエラー.png" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="LoadImage_2" Image="[image]" />
-                <ui:ImageFound DisplayName="画像の有無を確認 'FFRK.exe FINAL'" Found="[resultFind]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
-                  <ui:ImageFound.Image>
-                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
-                  </ui:ImageFound.Image>
-                  <ui:ImageFound.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='ffrk.exe' cls='KickmotorMain' title='FINAL FANTASY Record Keeper' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
-                  </ui:ImageFound.Target>
-                </ui:ImageFound>
-                <If Condition="[resultFind]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,256" sap2010:WorkflowViewState.IdRef="If_1">
+                <ui:LoadImage DisplayName="画像" FileName="Assets\images\001_メイン\033_バトル_オート解除.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_6" Image="[image]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LoadImage>
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Check Image" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Util\CheckImage.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="ui:Image" x:Key="i_image">
+                      <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="i_timeout">
+                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="1000 * 60" />
+                    </InArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result">
+                      <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
+                    </OutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If.Then>
-                    <Sequence sap2010:Annotation.AnnotationText="対応めんどくさすぎる・・&#xA;後続処理やめるわ・・(´・ω・｀)" DisplayName="システムエラー対応" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <TerminateWorkflow DisplayName="ワークフローを終了" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="FFRKシステムエラー発生（幻夢）" />
-                    </Sequence>
-                  </If.Then>
-                  <If.Else>
-                    <Sequence DisplayName="Nothing to Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </Sequence>
-                  </If.Else>
-                </If>
+                </ui:InvokeWorkflowFile>
               </Sequence>
-              <Sequence DisplayName="101：ネットワークエラー対応" sap:VirtualizedContainerService.HintSize="663,756" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:Boolean" Name="resultFind" />
-                </Sequence.Variables>
+            </Sequence>
+            <FlowStep.Next>
+              <FlowDecision x:Name="__ReferenceID1" DisplayName="In Auto Battle?" sap:VirtualizedContainerService.HintSize="83,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                <FlowDecision.Condition>
+                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="result" />
+                </FlowDecision.Condition>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <av:Point x:Key="ShapeLocation">460,241</av:Point>
+                    <av:Size x:Key="ShapeSize">83,87</av:Size>
+                    <av:PointCollection x:Key="TrueConnector">460,284.5 371,284.5 371,158 401,158</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">543,284.5 561,284.5 561,348 501,348 501,378</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\902_Condition_ネットワークエラー.png" sap:VirtualizedContainerService.HintSize="621,59" sap2010:WorkflowViewState.IdRef="LoadImage_4" Image="[image]" />
-                <ui:ImageFound DisplayName="画像の有無を確認" Found="[resultFind]" sap:VirtualizedContainerService.HintSize="621,68" sap2010:WorkflowViewState.IdRef="ImageFound_2">
-                  <ui:ImageFound.Image>
-                    <ui:ImageTarget Accuracy="0.8" Image="[image]" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAfCAYAAACCj930AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAABVBJREFUeF7tWguSrCAMnGt5Ia/jbbyMh/Gl+UgCAcM4zrpv6SpqdxCTkDQhqK99YOChGOQceCwGOQcei0HOG7Cty76s4cevwLYv87Kvy7zfYrbzxxZ+2GEkJxk/vWP4us/TQnffhG3Zpzvlv4N13udfQUwZm42IuRCJ5jdIZMIbfvlBctK112t/Kc06iW2ZKvfWZE/7EoxZ5/L6dVKRXspAab532qHLnqLgU9D9xoWNnUDOC30zJYbJtTnTqY0H1rmPQw1ygpDl5F2L3kPmgmH0d2Z9ydiWA/Rr65wC10a5YNR74USbwOtoZYdv2NGlw0JO+JjIB7LxsWLH8mO82sr4iJZ/FHTWnJgQJ0AkCCOKcBCNpyyBraIwtOIcKzmRNWUgmA0cWsCoT110p8Fqw22NNQHfsEPTUYWPzYRaM78FcgSLslhlehALSTo9to7UHezsICcUlsSJAUExjb/SUNxDhHEribYc4QhtAolg2paN5pwiVm5AbeLmgCV7mrobaG5b37CD6Ti/N+jZVjoM0Vj4/bjUJqeMsf8tbdJiC1D/x8mJwLs6CUobASDIAGWTqtQiCbVJnSN32AErKTBHy7gGujOnhit2mBcAkPma9NZjk8XxXXLWEkgFbXJuG83Xp/6DlFDAVxlHobyTbJ3GJzT0GANWJXcPSFdVxjfsuELOJkpycj2lzRXZLf8oqJMTEz1ImNVzWGWKE0Bkk5EqoMNWb0qc3GcJmFtwVjtboPnWvP8NOz5FTsgR88jGCju1Wl+X/cHTOodmAEfIsIVjrOT0BOtZVQ6uzFCISc7V6i3XMiUbAtGcWydI3qHiVjto7orcr5CTgBLmeJRUGK3I5n4x4gPkjMTSptlwQEQIitmnAS6Y2knTCrf64TDtScI1oLY2vyG60Y42DLH5FJw/+jUZyTkw8H0Mcg48FoOcA49FnZyohZSCO2++yKX6JfbxOoZkaKd6G6iWZae79A76nRN9QvNZpIChJoOPqlX+2SEyALXz4bv+2vt/RkfmJGebqnwEJRJJthjHdNKT/SWIIHSRx6v2etMqs/16lC0y0bQTKaFJTm97BJ4FlnqxAIjAoR+HvKuvUP8nnJCzFiy0lBXgeK0fwdP5TCfTEAE8+7JnC098nQ82mW1ycoA4GVFAHuED2Q674ivBeA0XmkSOUHT+YZyTM3lcZM6z98g8aEeACshgnBMH9hDhmxm8LfMSOQtw/wRgm8b2THr8pbi9x78N4N5TAv8dfCRz+gD4ftNDYGQW2oKTLNqO+StS4CB46sPWjdipmdEik9AmZ5pH3jhnXAmBfuirkInriQu5+WoSmXVkTYFbMqf2AW06yIAA9D8VWjyAG4KD2o508AAlPdyWPKvZZV7PnOgPNlUzHezh2TuOrx0QMb7uz7+KOjm1rVlpPjYUsNiHbZdaHoLjlIyA+n9k8EEkIlGeFV1gta+hHDHC/R0yE9kT4ud+EkQYZR5eRyQbMqhCKujli/qUeCRTJfnfRkfmlJBBjuMoEDG7UoCQJQ5S0mnFBZoCiqH5ly21jObJWXm1R6R1J90OmSU5Gdnwi+5Jiw+lgczkQNrWSa+6EPn2XSO5RDzMDSR8jpxH5gy9RBjwNJEzntzDWJbhNmQgRQ/68WEHsp8au4O0dpkgX/oOIPtgRWQ8T9rZkZWTLcLfq/WLTAmZPJtrIFtlDT8AvEHOkghinHuMAmL6q8djptrWFghRBC9kXmBFRoSMohE58tQI1GQCkHscesr7eebkpE3jQD6yB/PR0h10u7EY5+WUBB6w4IScAwM/h0HOgcdikHPgsRjkHHgo9v0f5XL+stWNwLkAAAAASUVORK5CYII=" />
-                  </ui:ImageFound.Image>
-                  <ui:ImageFound.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
-                  </ui:ImageFound.Target>
-                </ui:ImageFound>
-                <If Condition="[resultFind]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="621,457" sap2010:WorkflowViewState.IdRef="If_2">
-                  <If.Then>
-                    <Sequence sap2010:Annotation.AnnotationText="" DisplayName="対応" sap:VirtualizedContainerService.HintSize="376,309" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <FlowDecision.True>
+                  <x:Reference>__ReferenceID0</x:Reference>
+                </FlowDecision.True>
+                <FlowDecision.False>
+                  <FlowStep x:Name="__ReferenceID2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">401,378</av:Point>
+                        <av:Size x:Key="ShapeSize">200,66</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">501,444 501,494</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Lack of Stamina?" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_17">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\902_2_Button_ネットワークエラー.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_5" Image="[image]" />
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="timeout">10</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
-                          <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
-                          <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click" />
-                        </ui:InvokeWorkflowFile.Arguments>
+                      <Sequence DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_16">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </ui:InvokeWorkflowFile>
+                        <ui:LoadImage DisplayName="画像" FileName="Assets\images\010_リスタート\010_凶級（幻夢）.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_7" Image="[image]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LoadImage>
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Util\ClickImage.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="ui:Image" x:Key="image">
+                              <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
+                            <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
+                            <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click">
+                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
+                            </OutArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="accuracy" />
+                          </ui:InvokeWorkflowFile.Arguments>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
                     </Sequence>
-                  </If.Then>
-                  <If.Else>
-                    <Sequence DisplayName="Nothing to Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </Sequence>
-                  </If.Else>
-                </If>
-              </Sequence>
-            </Sequence>
-            <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID1">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">101,272</av:Point>
-                    <av:Size x:Key="ShapeSize">200,22</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">301,283 331,283 331,173.5 300,173.5</av:PointCollection>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Delay DisplayName="待機" Duration="00:01:00" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_1">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Delay>
-                <FlowStep.Next>
-                  <x:Reference>__ReferenceID0</x:Reference>
-                </FlowStep.Next>
-              </FlowStep>
+                    <FlowStep.Next>
+                      <FlowDecision x:Name="__ReferenceID3" Condition="[result]" DisplayName="Lack of Stamina?" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">454,494</av:Point>
+                            <av:Size x:Key="ShapeSize">94,87</av:Size>
+                            <av:PointCollection x:Key="TrueConnector">454,537.5 200,537.5 200,631</av:PointCollection>
+                            <av:PointCollection x:Key="FalseConnector">548,537.5 561,537.5 561,623 501,623 501,653</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <FlowDecision.True>
+                          <FlowStep x:Name="__ReferenceID5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">100,631</av:Point>
+                                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">100,664 70,664 70,158 401,158</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Design" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                            <FlowStep.Next>
+                              <x:Reference>__ReferenceID0</x:Reference>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowDecision.True>
+                        <FlowDecision.False>
+                          <FlowStep x:Name="__ReferenceID4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">401,653</av:Point>
+                                <av:Size x:Key="ShapeSize">200,22</av:Size>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Throw DisplayName="スロー" Exception="[New BusinessRuleException]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Throw>
+                          </FlowStep>
+                        </FlowDecision.False>
+                      </FlowDecision>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowDecision.False>
+              </FlowDecision>
             </FlowStep.Next>
           </FlowStep>
           <x:Reference>__ReferenceID1</x:Reference>
+          <x:Reference>__ReferenceID2</x:Reference>
+          <x:Reference>__ReferenceID3</x:Reference>
+          <x:Reference>__ReferenceID4</x:Reference>
+          <x:Reference>__ReferenceID5</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,156" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="638,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -254,12 +276,8 @@
             </ActivityAction.Argument>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="例外処理" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="UtilBusiness\ExceptionHandling.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="i_GenmuSeries">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="i_series" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="i_mode">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="i_mode" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="i_GenmuSeries">[i_series]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="i_mode">[i_mode]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">

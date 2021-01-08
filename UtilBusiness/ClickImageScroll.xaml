@@ -5,6 +5,7 @@
     <x:Property Name="i_ready_before" Type="InArgument(x:Int32)" />
     <x:Property Name="o_resultClick" Type="OutArgument(x:Boolean)" />
     <x:Property Name="i_ready_after" Type="InArgument(x:Int32)" />
+    <x:Property Name="i_limitLoopNum" Type="InArgument(x:Int32)" />
   </x:Members>
   <this:MainFlow.i_image>
     <InArgument x:TypeArguments="ui:Image" />
@@ -21,7 +22,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1008,1135</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>754,1135</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MainFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -134,7 +135,10 @@
         </Sequence>
       </Sequence>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="終了条件：&#xA;・クリックに成功すること&#xA;・ループ上限回数を超えていること" Condition="[o_resultClick or (i &gt; 5)]" DisplayName="スクロールが不要？" sap:VirtualizedContainerService.HintSize="97,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+        <FlowDecision x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="終了条件：&#xA;・クリックに成功すること&#xA;・ループ上限回数を超えていること" DisplayName="スクロールが不要？" sap:VirtualizedContainerService.HintSize="97,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+          <FlowDecision.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="o_resultClick or (i &gt; i_limitLoopNum)" />
+          </FlowDecision.Condition>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -200,7 +204,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">501,792 501,822 502,822 502,842</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="待機" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                  <Sequence DisplayName="待機" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_48">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -258,14 +262,42 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="ループ回数" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:Int32">0</InArgument>
-          </Assign.Value>
-        </Assign>
+        <Sequence DisplayName="ループ回数" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_50">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+        <Sequence DisplayName="ループ上限" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_49">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If Condition="[i_limitLoopNum = 0]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_6">
+            <If.Then>
+              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[i_limitLoopNum]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">5</InArgument>
+                </Assign.Value>
+              </Assign>
+            </If.Then>
+          </If>
+        </Sequence>
       </Sequence>
       <FlowStep.Next>
         <x:Reference>__ReferenceID0</x:Reference>
