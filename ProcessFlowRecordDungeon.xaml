@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>704,2103</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>754,2451</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -30,6 +30,7 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -54,15 +55,16 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="714,1938" sap2010:WorkflowViewState.IdRef="Sequence_37">
+  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="714,2286" sap2010:WorkflowViewState.IdRef="Sequence_37">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="672,1846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="672,2194" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Flowchart DisplayName="ProcessFlow" sap:VirtualizedContainerService.HintSize="634,1967" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
@@ -126,7 +128,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\002_挑戦する.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_15" Image="[image]" />
+                  <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\008_挑戦する.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_15" Image="[image]" />
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="挑戦する" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
@@ -148,7 +150,7 @@
                         <av:PointCollection x:Key="ConnectorLocation">201,655 201,705</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="GO" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <Sequence DisplayName="GO" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_23">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="ui:Image" Name="image" />
                       </Sequence.Variables>
@@ -158,7 +160,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\902_GO.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_18" Image="[image]" />
+                      <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\009_GO.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_18" Image="[image]" />
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
@@ -187,13 +189,9 @@
                           <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\804_rd_ポーズ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_19" Image="[image]" />
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                                <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                               <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
-                              <InArgument x:TypeArguments="x:Int32" x:Key="ready_before">
-                                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="1000 * 10" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="ready_before">[1000 * 10]</InArgument>
                               <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
@@ -251,7 +249,7 @@
                                   </ui:InvokeWorkflowFile>
                                 </Sequence>
                                 <FlowStep.Next>
-                                  <FlowStep x:Name="__ReferenceID12">
+                                  <FlowStep x:Name="__ReferenceID11">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">101,1053</av:Point>
@@ -269,24 +267,14 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\032_バトル結果_スキップ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_36" Image="[image]" />
-                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="ワークフローファイルを呼び出し" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="UtilBusiness\FinishResult.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                                            <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="timeout">
-                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="1000 * 60 * 10" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="ready_before">
-                                            <Literal x:TypeArguments="x:Int32" Value="1000" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
+                                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
                                     <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID11">
+                                      <FlowStep x:Name="__ReferenceID8">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">101,1169</av:Point>
@@ -294,7 +282,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">201,1235 201,1285</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="戦闘リザルト_次へ" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                        <Sequence DisplayName="レコダンスキップ1" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="ui:Image" Name="image" />
                                           </Sequence.Variables>
@@ -304,15 +292,18 @@
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\901_次へ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_37" Image="[image]" />
-                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\804_rd_ポーズ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_33" Image="[image]" />
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="timeout">[1000 * 60 * 10]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="ready_before">10000</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="ready_after">200</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
                                         </Sequence>
                                         <FlowStep.Next>
-                                          <FlowStep x:Name="__ReferenceID8">
+                                          <FlowStep x:Name="__ReferenceID9">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <av:Point x:Key="ShapeLocation">101,1285</av:Point>
@@ -320,7 +311,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">201,1351 201,1401</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="レコダンスキップ1" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                            <Sequence DisplayName="レコダンスキップ2" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="ui:Image" Name="image" />
                                               </Sequence.Variables>
@@ -330,34 +321,23 @@
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\804_rd_ポーズ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_33" Image="[image]" />
-                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                              <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\805_rd_スキップ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_34" Image="[image]" />
+                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                                                    <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="timeout">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="1000 * 60 * 10" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="ready_before">
-                                                    <Literal x:TypeArguments="x:Int32" Value="10000" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="ready_after">
-                                                    <Literal x:TypeArguments="x:Int32" Value="200" />
-                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                               </ui:InvokeWorkflowFile>
                                             </Sequence>
                                             <FlowStep.Next>
-                                              <FlowStep x:Name="__ReferenceID9">
+                                              <FlowStep x:Name="__ReferenceID10">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">101,1401</av:Point>
                                                     <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                    <av:PointCollection x:Key="ConnectorLocation">201,1467 201,1517</av:PointCollection>
+                                                    <av:PointCollection x:Key="ConnectorLocation">201,1467 201,1501</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Sequence DisplayName="レコダンスキップ2" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                                <Sequence DisplayName="レコダンスキップ3" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_44">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="ui:Image" Name="image" />
                                                   </Sequence.Variables>
@@ -367,23 +347,23 @@
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\805_rd_スキップ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_34" Image="[image]" />
-                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                                  <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\806_rd_スキップ2.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_35" Image="[image]" />
+                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                                     <ui:InvokeWorkflowFile.Arguments>
                                                       <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                                                     </ui:InvokeWorkflowFile.Arguments>
                                                   </ui:InvokeWorkflowFile>
                                                 </Sequence>
                                                 <FlowStep.Next>
-                                                  <FlowStep x:Name="__ReferenceID10">
+                                                  <FlowStep x:Name="__ReferenceID14">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">101,1517</av:Point>
+                                                        <av:Point x:Key="ShapeLocation">101,1501</av:Point>
                                                         <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                        <av:PointCollection x:Key="ConnectorLocation">201,1583 201,1633</av:PointCollection>
+                                                        <av:PointCollection x:Key="ConnectorLocation">201,1567 201,1601</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence DisplayName="レコダンスキップ3" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                                    <Sequence DisplayName="レコダンスキップ1" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_47">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="ui:Image" Name="image" />
                                                       </Sequence.Variables>
@@ -393,23 +373,26 @@
                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\806_rd_スキップ2.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_35" Image="[image]" />
-                                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                                      <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\804_rd_ポーズ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_38" Image="[image]" />
+                                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                                         <ui:InvokeWorkflowFile.Arguments>
                                                           <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="timeout">[1000 * 60 * 10]</InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="ready_before">10000</InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="ready_after">200</InArgument>
                                                         </ui:InvokeWorkflowFile.Arguments>
                                                       </ui:InvokeWorkflowFile>
                                                     </Sequence>
                                                     <FlowStep.Next>
-                                                      <FlowStep x:Name="__ReferenceID15">
+                                                      <FlowStep x:Name="__ReferenceID13">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <av:Point x:Key="ShapeLocation">101,1633</av:Point>
+                                                            <av:Point x:Key="ShapeLocation">101,1601</av:Point>
                                                             <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                            <av:PointCollection x:Key="ConnectorLocation">201,1699 201,1749</av:PointCollection>
+                                                            <av:PointCollection x:Key="ConnectorLocation">201,1667 201,1701</av:PointCollection>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <Sequence DisplayName="レコダンスキップ1" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                                        <Sequence DisplayName="レコダンスキップ2" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_48">
                                                           <Sequence.Variables>
                                                             <Variable x:TypeArguments="ui:Image" Name="image" />
                                                           </Sequence.Variables>
@@ -419,34 +402,23 @@
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\804_rd_ポーズ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_38" Image="[image]" />
-                                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                                          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\805_rd_スキップ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_39" Image="[image]" />
+                                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                                             <ui:InvokeWorkflowFile.Arguments>
-                                                              <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                                                                <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                                                              </InArgument>
-                                                              <InArgument x:TypeArguments="x:Int32" x:Key="timeout">
-                                                                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="1000 * 60 * 10" />
-                                                              </InArgument>
-                                                              <InArgument x:TypeArguments="x:Int32" x:Key="ready_before">
-                                                                <Literal x:TypeArguments="x:Int32" Value="10000" />
-                                                              </InArgument>
-                                                              <InArgument x:TypeArguments="x:Int32" x:Key="ready_after">
-                                                                <Literal x:TypeArguments="x:Int32" Value="200" />
-                                                              </InArgument>
+                                                              <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                                                             </ui:InvokeWorkflowFile.Arguments>
                                                           </ui:InvokeWorkflowFile>
                                                         </Sequence>
                                                         <FlowStep.Next>
-                                                          <FlowStep x:Name="__ReferenceID14">
+                                                          <FlowStep x:Name="__ReferenceID12">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <av:Point x:Key="ShapeLocation">101,1749</av:Point>
+                                                                <av:Point x:Key="ShapeLocation">101,1701</av:Point>
                                                                 <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                                <av:PointCollection x:Key="ConnectorLocation">201,1815 201,1865</av:PointCollection>
+                                                                <av:PointCollection x:Key="ConnectorLocation">301,1734 331,1734 331,158 300,158</av:PointCollection>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="レコダンスキップ2" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                                            <Sequence DisplayName="レコダンスキップ3" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                                               <Sequence.Variables>
                                                                 <Variable x:TypeArguments="ui:Image" Name="image" />
                                                               </Sequence.Variables>
@@ -456,23 +428,26 @@
                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\805_rd_スキップ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_39" Image="[image]" />
-                                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                                              <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\806_rd_スキップ2.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_40" Image="[image]" />
+                                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_42" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                                                 <ui:InvokeWorkflowFile.Arguments>
                                                                   <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
+                                                                  <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
+                                                                  <InArgument x:TypeArguments="x:Int32" x:Key="ready_after">[1000 * 15]</InArgument>
                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                               </ui:InvokeWorkflowFile>
                                                             </Sequence>
                                                             <FlowStep.Next>
-                                                              <FlowStep x:Name="__ReferenceID13">
+                                                              <FlowStep x:Name="__ReferenceID4">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <av:Point x:Key="ShapeLocation">101,1865</av:Point>
+                                                                    <av:Point x:Key="ShapeLocation">100,125</av:Point>
                                                                     <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                                    <av:PointCollection x:Key="ConnectorLocation">301,1898 331,1898 331,158 300,158</av:PointCollection>
+                                                                    <av:PointCollection x:Key="ConnectorLocation">200,191 200,221 201,221 201,241</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <Sequence DisplayName="レコダンスキップ3" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                                                <Sequence DisplayName="4章選択" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_38">
                                                                   <Sequence.Variables>
                                                                     <Variable x:TypeArguments="ui:Image" Name="image" />
                                                                   </Sequence.Variables>
@@ -482,30 +457,26 @@
                                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\806_rd_スキップ2.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_40" Image="[image]" />
-                                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_42" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                                                  <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\802_rd_章.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_29" Image="[image]" />
+                                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                                      <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                                                                        <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                                                                      </InArgument>
+                                                                      <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                                                                       <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
                                                                       <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
-                                                                      <InArgument x:TypeArguments="x:Int32" x:Key="ready_after">
-                                                                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="1000 * 15" />
-                                                                      </InArgument>
+                                                                      <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
                                                                     </ui:InvokeWorkflowFile.Arguments>
                                                                   </ui:InvokeWorkflowFile>
                                                                 </Sequence>
                                                                 <FlowStep.Next>
-                                                                  <FlowStep x:Name="__ReferenceID4">
+                                                                  <FlowStep x:Name="__ReferenceID5">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <av:Point x:Key="ShapeLocation">100,125</av:Point>
+                                                                        <av:Point x:Key="ShapeLocation">101,241</av:Point>
                                                                         <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                                        <av:PointCollection x:Key="ConnectorLocation">200,191 200,221 201,221 201,241</av:PointCollection>
+                                                                        <av:PointCollection x:Key="ConnectorLocation">201,307 201,357</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <Sequence DisplayName="4章選択" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                                                    <Sequence DisplayName="移動する" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                                                       <Sequence.Variables>
                                                                         <Variable x:TypeArguments="ui:Image" Name="image" />
                                                                       </Sequence.Variables>
@@ -515,48 +486,15 @@
                                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\802_rd_章.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_29" Image="[image]" />
-                                                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+                                                                      <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\803_rd_移動する.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_30" Image="[image]" />
+                                                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                                          <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                                                                            <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
-                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
-                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
+                                                                          <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
                                                                         </ui:InvokeWorkflowFile.Arguments>
                                                                       </ui:InvokeWorkflowFile>
                                                                     </Sequence>
                                                                     <FlowStep.Next>
-                                                                      <FlowStep x:Name="__ReferenceID5">
-                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                            <av:Point x:Key="ShapeLocation">101,241</av:Point>
-                                                                            <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                                            <av:PointCollection x:Key="ConnectorLocation">201,307 201,357</av:PointCollection>
-                                                                          </scg:Dictionary>
-                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                        <Sequence DisplayName="移動する" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
-                                                                          <Sequence.Variables>
-                                                                            <Variable x:TypeArguments="ui:Image" Name="image" />
-                                                                          </Sequence.Variables>
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\803_rd_移動する.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_30" Image="[image]" />
-                                                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
-                                                                            <ui:InvokeWorkflowFile.Arguments>
-                                                                              <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
-                                                                            </ui:InvokeWorkflowFile.Arguments>
-                                                                          </ui:InvokeWorkflowFile>
-                                                                        </Sequence>
-                                                                        <FlowStep.Next>
-                                                                          <x:Reference>__ReferenceID0</x:Reference>
-                                                                        </FlowStep.Next>
-                                                                      </FlowStep>
+                                                                      <x:Reference>__ReferenceID0</x:Reference>
                                                                     </FlowStep.Next>
                                                                   </FlowStep>
                                                                 </FlowStep.Next>
@@ -632,7 +570,6 @@
           <x:Reference>__ReferenceID12</x:Reference>
           <x:Reference>__ReferenceID13</x:Reference>
           <x:Reference>__ReferenceID14</x:Reference>
-          <x:Reference>__ReferenceID15</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>

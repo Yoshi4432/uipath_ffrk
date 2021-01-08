@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1024,801</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>754,801</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FinishResult_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -59,7 +59,6 @@
         <av:Point x:Key="ShapeLocation">170,0</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">200,75 200,125</av:PointCollection>
-        <x:Double x:Key="Width">600</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -84,15 +83,15 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="スキップ" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="スキップ" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\032_バトル結果_スキップ.png" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[image]" />
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\001_メイン\032_バトル結果_スキップ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[image]" />
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="timeout">420000</InArgument>
@@ -103,22 +102,22 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
         </Sequence>
-        <Sequence DisplayName="スキップ失敗のチェック" sap:VirtualizedContainerService.HintSize="526,453" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="スキップ失敗のチェック" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If sap2010:Annotation.AnnotationText="スキップに失敗する場合に想定されるケース&#xA;　①：ステージ選択時にタイムアウトが発生している&#xA;　②：戦闘時間が想定を超えていてタイムアウト&#xA;　　　⇒マルチ・筆致・ファブール設定のミスぐらいしか発生しない&#xA;　③：何らかの原因で全滅している&#xA;　　　⇒フレンド解除の空振り・バトルオートの空振りぐらいしか発生しない&#xA;&#xA;①②を解決するため、例外を発生させて初期状態に戻す.&#xA;③は保留。" Condition="[clickResult]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,361" sap2010:WorkflowViewState.IdRef="If_1">
+          <If sap2010:Annotation.AnnotationText="スキップに失敗する場合に想定されるケース&#xA;　①：ステージ選択時にタイムアウトが発生している&#xA;　②：戦闘時間が想定を超えていてタイムアウト&#xA;　　　⇒筆致・ファブール設定のミスぐらいしか発生しない&#xA;　③：何らかの原因で全滅している&#xA;　　　⇒フレンド解除の空振り・バトルオートの空振りぐらいしか発生しない&#xA;&#xA;①②を解決するため、例外を発生させて初期状態に戻す.&#xA;③は保留。" Condition="[clickResult]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,361" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -155,7 +154,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,309.5 300,359.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="戦闘リザルト_次へ" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="戦闘リザルト_次へ" sap:VirtualizedContainerService.HintSize="418,461" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:Image" Name="image" />
               <Variable x:TypeArguments="x:Boolean" Name="resultClick" />
@@ -166,14 +165,14 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="戦闘リザルト_次へをクリック" sap:VirtualizedContainerService.HintSize="549,278" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="戦闘リザルト_次へをクリック" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\901_次へ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_2" Image="[image]" />
+              <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\011_次へ.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_2" Image="[image]" />
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
@@ -189,10 +188,11 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
             </Sequence>
-            <If Condition="[resultClick]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="549,300" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[resultClick]" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
