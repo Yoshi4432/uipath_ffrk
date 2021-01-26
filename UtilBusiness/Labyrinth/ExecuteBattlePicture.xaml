@@ -213,7 +213,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">501,1066 501,1116</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="GO!" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_148">
+                          <Sequence DisplayName="GO!" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_148">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="ui:Image" Name="image" />
                             </Sequence.Variables>
@@ -223,10 +223,10 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_147">
+                            <Sequence DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_147">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -240,10 +240,13 @@
                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_74" UnSafe="False" WorkflowFileName="Util\ClickImage.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="timeout">[1000 * 60 * 2]</InArgument>
                                   <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
                                   <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
                                   <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click" />
+                                  <InArgument x:TypeArguments="x:Double" x:Key="accuracy" />
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="x" />
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="y" />
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -459,7 +462,7 @@
           <av:PointCollection x:Key="ConnectorLocation">1045,191 1045,241</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="開始ログ" sap:VirtualizedContainerService.HintSize="418,271" sap2010:WorkflowViewState.IdRef="Sequence_205">
+      <Sequence DisplayName="開始ログ" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_205">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -474,9 +477,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteLog workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_92" UnSafe="False" WorkflowFileName="Util\WriteLog.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="i_message">
-                <Literal x:TypeArguments="x:String">【開始】戦いの絵画</Literal>
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="i_message">【開始】戦いの絵画</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
