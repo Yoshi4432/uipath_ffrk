@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1060,877</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>926,993</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RecoverStamina_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -60,7 +60,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="RecoverStamina" sap:VirtualizedContainerService.HintSize="636,828" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="RecoverStamina" sap:VirtualizedContainerService.HintSize="636,944" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="result" />
       <Variable x:TypeArguments="ui:Image" Name="image" />
@@ -70,18 +70,18 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">471,0</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <x:Double x:Key="Height">792</x:Double>
+        <x:Double x:Key="Height">908</x:Double>
         <av:PointCollection x:Key="ConnectorLocation">501,75 501,125</av:PointCollection>
         <x:Double x:Key="Width">602</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID7</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">402,726</av:Point>
+          <av:Point x:Key="ShapeLocation">402,842</av:Point>
           <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -112,9 +112,9 @@
     <FlowStep x:Name="__ReferenceID1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">401,610</av:Point>
+          <av:Point x:Key="ShapeLocation">401,726</av:Point>
           <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">501,676 501,706 502,706 502,726</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">501,792 501,822 502,822 502,842</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="スタミナを回復しました！" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -146,7 +146,7 @@
           <av:PointCollection x:Key="ConnectorLocation">501,560 501,610</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="スタミナを回復しますか？" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence DisplayName="上記内容でスタミナを回復しますか？" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="ui:Image" Name="image" />
         </Sequence.Variables>
@@ -164,7 +164,35 @@
         </ui:InvokeWorkflowFile>
       </Sequence>
       <FlowStep.Next>
-        <x:Reference>__ReferenceID1</x:Reference>
+        <FlowStep x:Name="__ReferenceID7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">401,610</av:Point>
+              <av:Size x:Key="ShapeSize">200,66</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">501,676 501,726</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="スタミナ回復薬使用確認" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ui:Image" Name="image" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\900_汎用\001_はい.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_8" Image="[image]" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ClickImage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID1</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
       </FlowStep.Next>
     </FlowStep>
     <FlowStep x:Name="__ReferenceID3">
@@ -175,7 +203,7 @@
           <av:PointCollection x:Key="ConnectorLocation">501,444 501,494</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="スタミナ回復（回復薬）" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="スタミナ回復薬を使用して回復する" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="ui:Image" Name="image" />
           <Variable x:TypeArguments="x:Boolean" Name="clickResult" />
@@ -186,22 +214,22 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="スタミナ回復をクリック" sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="スタミナ回復をクリック" sap:VirtualizedContainerService.HintSize="376,242" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\001_メイン\023_スタミナ回復薬を使用して回復する.png" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[image]">
+          <ui:LoadImage DisplayName="画像を読み込み" FileName="Assets\images\001_メイン\023_スタミナ回復薬を使用して回復する.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[image]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LoadImage>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像をクリック" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Util/ClickImage.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
@@ -222,7 +250,7 @@
         <x:Reference>__ReferenceID2</x:Reference>
       </FlowStep.Next>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID7">
+    <FlowStep x:Name="__ReferenceID8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">401,125</av:Point>
@@ -269,13 +297,9 @@
                 </ui:LoadImage>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="ワークフローファイルを呼び出し" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Util\CheckImage.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="ui:Image" x:Key="i_image">
-                      <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="ui:Image" x:Key="i_image">[image]</InArgument>
                     <InArgument x:TypeArguments="x:Int32" x:Key="i_timeout" />
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result">
-                      <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
-                    </OutArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result">[result]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
@@ -318,10 +342,7 @@
         </Sequence>
       </Sequence>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID5" DisplayName="Twitter回復？" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-          <FlowDecision.Condition>
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="result" />
-          </FlowDecision.Condition>
+        <FlowDecision x:Name="__ReferenceID5" Condition="[result]" DisplayName="Twitter回復？" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -388,7 +409,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">230,221 230,271</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="後処理" sap:VirtualizedContainerService.HintSize="242,220" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence DisplayName="後処理" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -423,5 +444,6 @@
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
   </Flowchart>
 </Activity>
