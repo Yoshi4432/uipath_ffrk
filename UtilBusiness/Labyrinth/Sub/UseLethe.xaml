@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UseLethe" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1008,1225" sap2010:WorkflowViewState.IdRef="UseLethe_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UseLethe" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="926,1362" sap2010:WorkflowViewState.IdRef="UseLethe_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -22,6 +22,9 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -46,6 +49,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="UseLethe" sap:VirtualizedContainerService.HintSize="936,1197" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -374,18 +378,12 @@
           </ui:LoadImage>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Util\ClickImage.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-              </InArgument>
+              <InArgument x:TypeArguments="ui:Image" x:Key="image">[image]</InArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
               <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
               <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
-              <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click">
-                <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="result" />
-              </OutArgument>
-              <InArgument x:TypeArguments="x:Double" x:Key="accuracy">
-                <Literal x:TypeArguments="x:Double" Value="0.9" />
-              </InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click">[result]</OutArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="accuracy">0.9</InArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="x" />
               <InArgument x:TypeArguments="x:Int32" x:Key="y" />
             </ui:InvokeWorkflowFile.Arguments>
@@ -420,7 +418,7 @@
           <av:PointCollection x:Key="ConnectorLocation">802,307 802,357</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="メンバー選択" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence DisplayName="メンバー選択" sap:VirtualizedContainerService.HintSize="418,370" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <Sequence.Variables>
           <Variable x:TypeArguments="ui:Image" Name="image" />
           <Variable x:TypeArguments="x:Int32" Name="x" />
@@ -433,37 +431,13 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="宣言" sap:VirtualizedContainerService.HintSize="484,451" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Int32">[x]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Int32">0</InArgument>
-            </Assign.Value>
-          </Assign>
-          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Int32">[y]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Int32">0</InArgument>
-            </Assign.Value>
-          </Assign>
-          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Int32">0</InArgument>
-            </Assign.Value>
-          </Assign>
           <ui:LoadImage DisplayName="画像" FileName="Assets\images\002_ラビリンス\213_レテのしずく_ベース.png" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LoadImage_2" Image="[image]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -472,80 +446,31 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LoadImage>
-        </Sequence>
-        <While DisplayName="選択（5人）" sap:VirtualizedContainerService.HintSize="484,535" sap2010:WorkflowViewState.IdRef="While_1">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <While.Condition>[i &lt; 5]</While.Condition>
-          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="418,377" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Util\ClickImage.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:Image" x:Key="image">
+                <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
+              <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
+              <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click" />
+              <InArgument x:TypeArguments="x:Double" x:Key="accuracy" />
+              <InArgument x:TypeArguments="x:Int32" x:Key="x">
+                <Literal x:TypeArguments="x:Int32" Value="90" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="y">
+                <Literal x:TypeArguments="x:Int32" Value="60" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_4">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="画像の押下" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Util\ClickImage.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="ui:Image" x:Key="image">
-                    <mva:VisualBasicValue x:TypeArguments="ui:Image" ExpressionText="image" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="timeout" />
-                  <InArgument x:TypeArguments="x:Int32" x:Key="ready_before" />
-                  <InArgument x:TypeArguments="x:Int32" x:Key="ready_after" />
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="o_result_click" />
-                  <InArgument x:TypeArguments="x:Double" x:Key="accuracy" />
-                  <InArgument x:TypeArguments="x:Int32" x:Key="x">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="x" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="y">
-                    <Literal x:TypeArguments="x:Int32" Value="50" />
-                  </InArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:InvokeWorkflowFile>
-            </Sequence>
-            <Sequence DisplayName="代入" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Int32">[x]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Int32">[x - 85]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Int32">[i + 1]</InArgument>
-                </Assign.Value>
-              </Assign>
-            </Sequence>
-          </Sequence>
-        </While>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
       </Sequence>
       <FlowStep.Next>
         <x:Reference>__ReferenceID3</x:Reference>
