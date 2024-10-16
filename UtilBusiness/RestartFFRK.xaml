@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2371,3367</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2431,3367</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RestartFFRK_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -73,7 +73,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="RestartFFRKMain" sap:VirtualizedContainerService.HintSize="2381,3202" sap2010:WorkflowViewState.IdRef="Sequence_37">
+  <Sequence DisplayName="RestartFFRKMain" sap:VirtualizedContainerService.HintSize="2441,3202" sap2010:WorkflowViewState.IdRef="Sequence_37">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="isInBattle" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" Name="config" />
@@ -88,7 +88,7 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="2339,3110" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="2399,3110" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -158,7 +158,10 @@
               </Sequence>
             </Sequence>
             <FlowStep.Next>
-              <FlowDecision x:Name="__ReferenceID34" Condition="[Now.Hour = 5 and Now.Minute &lt; 30]" DisplayName="デイリー？" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_16">
+              <FlowDecision x:Name="__ReferenceID34" DisplayName="デイリー？" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_16">
+                <FlowDecision.Condition>
+                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Now.Hour = 0 and Now.Minute &lt; 30" />
+                </FlowDecision.Condition>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1055,10 +1058,7 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <FlowDecision.False>
-                                                  <FlowDecision x:Name="__ReferenceID35" DisplayName="超越？" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_17">
-                                                    <FlowDecision.Condition>
-                                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_mode = &quot;超越&quot;" />
-                                                    </FlowDecision.Condition>
+                                                  <FlowDecision x:Name="__ReferenceID35" Condition="[in_mode = &quot;超越&quot;]" DisplayName="超越？" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_17" True="{x:Reference __ReferenceID0}">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1068,9 +1068,6 @@
                                                         <av:PointCollection x:Key="FalseConnector">1008,1687.5 1033,1687.5 1033,1751 973,1751 973,1781</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <FlowDecision.True>
-                                                      <x:Reference>__ReferenceID0</x:Reference>
-                                                    </FlowDecision.True>
                                                     <FlowDecision.False>
                                                       <FlowDecision x:Name="__ReferenceID23" Condition="[in_mode = &quot;ラビリンス&quot;]" DisplayName="ラビリンス？" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_13">
                                                         <sap:WorkflowViewStateService.ViewState>
