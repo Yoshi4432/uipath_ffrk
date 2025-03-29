@@ -1,15 +1,16 @@
 {
   "name": "FFRK",
+  "projectId": "409f1f92-54da-4375-83fd-ae388d383768",
   "description": "Attended Robot REFramework",
   "main": "Main.xaml",
   "dependencies": {
     "Microsoft.Activities": "1.0.1",
     "Microsoft.Activities.Extensions": "2.0.6.9",
-    "UiPath.Credentials.Activities": "1.1.6479.13204",
-    "UiPath.Excel.Activities": "2.4.6884.25683",
-    "UiPath.Mail.Activities": "1.2.6863.29868",
-    "UiPath.System.Activities": "18.3.6877.28276",
-    "UiPath.UIAutomation.Activities": "18.3.6877.28298"
+    "UiPath.Credentials.Activities": "2.0.0",
+    "UiPath.Excel.Activities": "2.11.4",
+    "UiPath.Mail.Activities": "[2.0.11]",
+    "UiPath.System.Activities": "21.10.6",
+    "UiPath.UIAutomation.Activities": "21.10.10"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -18,16 +19,21 @@
   "projectVersion": "1.0.6836.24123",
   "runtimeOptions": {
     "autoDispose": false,
+    "netFrameworkLazyLoading": false,
     "isPausable": true,
+    "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
     ],
     "executionType": "Workflow",
     "readyForPiP": false,
-    "startsInPiP": false
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -40,7 +46,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
@@ -54,5 +61,5 @@
   "isTemplate": false,
   "templateProjectData": {},
   "publishData": {},
-  "targetFramework": "Legacy"
+  "targetFramework": "Windows"
 }
